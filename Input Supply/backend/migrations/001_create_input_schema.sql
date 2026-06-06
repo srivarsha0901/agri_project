@@ -3,6 +3,7 @@ CREATE TABLE IF NOT EXISTS input_dealers (
     dealer_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     business_name VARCHAR(255) NOT NULL,
     phone VARCHAR(15) NOT NULL,
+    service_district VARCHAR(100),
     status VARCHAR(50) DEFAULT 'active',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -16,6 +17,7 @@ CREATE TABLE IF NOT EXISTS input_products (
     pack_size VARCHAR(50),
     price DECIMAL(10,2) NOT NULL,
     stock INTEGER DEFAULT 0,
+    status VARCHAR(50) DEFAULT 'listed',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
